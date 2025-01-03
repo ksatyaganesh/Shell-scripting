@@ -4,7 +4,7 @@ arraylength=${#FRITUS[@]}
 for (( i=0; i<${arraylength}; i++ ));
 do
   echo "index: $i, value: ${FRITUS[$i]}"
-  if [$i % 2 == 0]
+  if [($i % 2) -ne 0]
   then echo "$i is even number."
   else
   echo "$i is odd number."
