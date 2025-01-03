@@ -8,7 +8,7 @@ NUMBER2=$2
 if [$NUMBER1 -lt 0]
 then
 echo "$NUMBER1 should not be negative"
-    exist 1
+    exist 
 # else if [$NUMBER2 -le 0]
 # then
 # echo "$NUMBER2 should not be negative"
