@@ -13,6 +13,7 @@ elif  [ $NUMBER2 -lt 0 ]
 then
     echo "NUMBER2 should not be negative"
 else
-    SUM=$($NUMBER1+$NUMBER2)
+    # SUM=$($NUMBER1+$NUMBER2)
+    SUM=$(($NUMBER1+$NUMBER2))
     echo "Sum of two numbers  is: $SUM"
 fi
