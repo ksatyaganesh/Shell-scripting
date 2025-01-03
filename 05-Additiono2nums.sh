@@ -8,8 +8,12 @@ NUMBER2=$2
 if[$NUMBER1 -le 0]
 then
 echo "$NUMBER1 should not be negative"
+    exist 1
 else if [$NUMBER2 -le 0]
-echo "$2 should not be negative"
+then
+echo "$NUMBER2 should not be negative"
+exist2
+else
 SUM=$(($NUMBER1+$NUMBER2))
 echo "Sum of two numbers  is: $SUM"
 fi
