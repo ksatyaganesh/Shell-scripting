@@ -1,8 +1,7 @@
 #!bin/bash
 FRITUS=("Apple" "ORANGE" "GRAPE")
-
-echo "Total friuts: ${FRITUS[@]}"
- for i in "${FRITUS[@]}";
-do 
-echo "$i"
+arraylength=${#array[@]}
+for (( i=0; i<${FRITUS}; i++ ));
+do
+  echo "index: $i, value: ${array[$i]}"
 done
