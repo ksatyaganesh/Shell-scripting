@@ -6,9 +6,9 @@ NUMBER2=$2
 # echo "Script executed at $TIMESTEMP"
 
 if [$NUMBER1 -lt 0]
-then
+ then
 echo "$NUMBER1 should not be negative"
-    exist 
+    
 # else if [$NUMBER2 -le 0]
 # then
 # echo "$NUMBER2 should not be negative"
