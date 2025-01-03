@@ -1,3 +1,3 @@
 #!/bin/bash
-USERID=$(is -u)
+USERID=$(id -u)
 echo "$USERID "
