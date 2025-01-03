@@ -9,6 +9,9 @@ TIMESTEMP=$(date)
 if [ $NUMBER1 -lt 0 ]
 then
     echo "$NUMBER1 should not be negative"
+else if [ $NUMBER1 -lt 0 ]
+then
+    echo "$NUMBER1 should not be negative"
 else
     SUM=$($NUMBER1+$NUMBER2)
     echo "Sum of two numbers  is: $SUM"
