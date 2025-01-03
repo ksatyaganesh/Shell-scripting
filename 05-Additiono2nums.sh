@@ -18,6 +18,6 @@ else
     MUL=$(($NUMBER1*$NUMBER2))
     DIV=$(($NUMBER1%$NUMBER2))
     echo "Sum of two numbers  is: $SUM"
-    echo "Sum of two numbers  is: $MUL"
-    echo "Sum of two numbers  is: $DIV"
+    echo "Multification of two numbers  is: $MUL"
+    echo "Division of two numbers  is: $DIV"
 fi
