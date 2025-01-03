@@ -5,7 +5,7 @@ NUMBER2=$2
 # TIMESTEMP=$(date)
 # echo "Script executed at $TIMESTEMP"
 
-if [$NUMBER1 -lt -1]
+if [ $NUMBER1 -lt 0]
  then
 echo "$NUMBER1 should not be negative"
     
