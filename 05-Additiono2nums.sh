@@ -9,7 +9,7 @@ TIMESTEMP=$(date)
 if [ $NUMBER1 -lt 0 ]
 then
     echo "$NUMBER1 should not be negative"
-else if [ $NUMBER2 -lt 0 ]
+elif  [ $NUMBER2 -lt 0 ]
 then
     echo "$NUMBER2 should not be negative"
 else
