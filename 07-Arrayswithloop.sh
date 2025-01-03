@@ -8,4 +8,5 @@ do
   then echo "$i is even number."
   else
   echo "$i is odd number."
+  fi
 done
