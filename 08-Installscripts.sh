@@ -12,22 +12,33 @@ LOG_FILE=$(echo $0 | cut -d "." -f1 )
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
+VALIDATE(){
+    if [ $1 -ne 0 ]
+    then
+        echo -e "$2 ... $R FAILURE $N"
+        exit 1
+    else
+        echo -e "$2 ... $G SUCCESS $N"
+    fi
+}
+
+echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
+
 if [ $USERID -ne 0 ]
-then 
-echo "ERROR:: you  don't  have access to install"
-exist 1
+then
+    echo "ERROR:: You must have sudo access to execute this script"
+    exit 1 #other than 0
 fi
+
 dnf list installed mysql &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
-then
- dnf install mysql -y &>>$LOG_FILE_NAME
-    if [ $? -ne 0 ]
-    then echo  -e "Installing Mysql .......... $R Failure $N"
-    exist 1
-    else
-    echo -e  "Installing ...........$G Success $N" &>>$LOG_FILE_NAME
-    fi
+then # not installed
+    dnf install mysql -y &>>$LOG_FILE_NAME
+    VALIDATE $? "Installing MySQL"
 else
-    echo -e "Mysql is  already $Y Installed $N"
+    echo -e "MySQL is already ... $Y INSTALLED $N"
 fi
+
+
+dnf list installed git &>>$LOG_FILE_NAME
