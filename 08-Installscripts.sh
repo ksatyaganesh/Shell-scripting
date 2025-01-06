@@ -17,17 +17,17 @@ then
 echo "ERROR:: you  don't  have access to install"
 exist 1
 fi
-dnf list installed mysql
+dnf list installed mysql &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then
- dnf install mysql -y
-    if [ $? -ne 0]
-    then echo "Installing ..........$R Failure $N"
+ dnf install mysql -y &>>$LOG_FILE_NAME
+    if [ $? -ne 0 ]
+    then echo  -e "Installing Mysql .......... $R Failure $N"
     exist 1
     else
-    echo "Installing ...........$G Success $N" &>>$LOG_FILE_NAME
+    echo -e  "Installing ...........$G Success $N" &>>$LOG_FILE_NAME
     fi
 else
-    echo "Mysql is  already $Y Installed $N"
+    echo -e "Mysql is  already $Y Installed $N"
 fi
